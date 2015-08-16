@@ -44,7 +44,7 @@ public class MyMaxPQ<Key>  {
         return retVal;
     }
 
-    private void sink(int index) {
+    protected void sink(int index) {
         int largestChildIndex = index*2;
         Key temp;
         while(largestChildIndex <= size) {
