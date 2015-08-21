@@ -56,9 +56,9 @@ public class NodeGraph<Key, Value> {
         for(Node childNode : node.edges) {
             System.out.println("Visited? " + visited.get(childNode.key));
             if(visited.get(childNode.key) == false) {
-                System.out.println("Distance: " + (thisDistance+1));
                 distance.put(childNode.key, (thisDistance + 1));
-                depthFirstSearch(childNode.key);
+                System.out.println("Child " + childNode.key + " Distance: " + distance.get(childNode.key));
+                dfs(childNode.key);
             }
         }
     }
@@ -90,6 +90,7 @@ public class NodeGraph<Key, Value> {
         System.out.println("Edge from 0 to 5? " + graph.visited.get(5));
 
         System.out.println("Distance from 0 to 0: " + graph.distance.get(0));
+        System.out.println("Distance from 0 to 1: " + graph.distance.get(1));
         System.out.println("Distance from 0 to 1: " + graph.distance.get(1));
         System.out.println("Distance from 0 to 2: " + graph.distance.get(2));
         System.out.println("Distance from 0 to 3: " + graph.distance.get(3));

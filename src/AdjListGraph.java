@@ -16,7 +16,7 @@ public class AdjListGraph {
         adj = new Set[numVertices];
 
         for(int i = 0; i < vertices; i++) {
-            adj[i] = new HashSet<>();
+            adj[i] = new HashSet();
         }
     }
 
