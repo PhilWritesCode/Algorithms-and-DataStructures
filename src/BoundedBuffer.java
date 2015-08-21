@@ -29,7 +29,7 @@ public class BoundedBuffer {
     public void deposit(int i) throws InterruptedException {
         lock.lock();
         try {
-            while(size == capacity) {
+            if(size == capacity) {
                 System.out.println("full!  Waiting...");
                 notFull.await();
             }
@@ -48,7 +48,7 @@ public class BoundedBuffer {
         lock.lock();
         try {
 
-            while(size == 0) {
+            if(size == 0) {
                 System.out.println("empty!  Waiting...");
                 notEmpty.await();
             }
